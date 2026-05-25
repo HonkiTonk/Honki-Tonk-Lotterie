@@ -1,4 +1,10 @@
-# Wuerfeln
-Würfelprogramm für verschiedene P&amp;P Systeme.
+# Honki Tonks Lotterie
+Kleines Programm um Zahlen für verschiedene Lotterien zu ziehen.
 
-Dice rolling program for various pen and paper systems.
+A small programm to generate numbers for various lotteries.
+
+Vorhandene Lotterien/Available lotteries:
+
+6aus49
+
+Eurojackpot
