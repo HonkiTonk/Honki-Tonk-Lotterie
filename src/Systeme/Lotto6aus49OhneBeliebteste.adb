@@ -2,24 +2,35 @@ with Ada.Text_IO; use Ada.Text_IO;
 
 with Zufallsgenerator;
 
-package body Lotto6aus49 is
+package body Lotto6aus49OhneBeliebteste is
 
    procedure Lotto6aus49
    is begin
       
-      GezogeneZahlen (1) := Zufallsgenerator.Würfelergebnis (SeitenanzahlExtern => 49);
+      GezogeneZahlen (1) := Zufallsgenerator.ZufallswertMitAnfang (AnfangeExtern => BeliebterZahlenbereichEins'Last + 1,
+                                                                   EndeExtern    => BeliebterZahlenbereichFünf'First - 1);
       AnzahlZahlen := 1;
       
       ZahlenSchleife:
       loop
          
-         Zwischenspeicher := Zufallsgenerator.Würfelergebnis (SeitenanzahlExtern => 49);
+         Zwischenspeicher := Zufallsgenerator.ZufallswertMitAnfang (AnfangeExtern => BeliebterZahlenbereichEins'Last + 1,
+                                                                    EndeExtern    => BeliebterZahlenbereichFünf'First - 1);
          
          PrüfenSchleife:
          for PrüfenSchleifenwert in GezogeneZahlen'First .. AnzahlZahlen loop
             
             if
               GezogeneZahlen (PrüfenSchleifenwert) = Zwischenspeicher
+            then
+               exit PrüfenSchleife;
+               
+            elsif
+              Zwischenspeicher in BeliebterZahlenbereichZwei
+              or
+                Zwischenspeicher in BeliebterZahlenbereichDrei
+                or
+                  Zwischenspeicher in BeliebterZahlenbereichVier
             then
                exit PrüfenSchleife;
                
@@ -63,17 +74,26 @@ package body Lotto6aus49 is
          
       end loop AnzeigeSchleife;
       
-      Zwischenspeicher := Zufallsgenerator.Würfelergebnis (SeitenanzahlExtern => 10);
+      SuperzahlSchleife:
+      loop
       
-      case
-        Zwischenspeicher
-      is
-         when 10 =>
-            Zwischenspeicher := 0;
+         Zwischenspeicher := Zufallsgenerator.Zufallswert (EndeExtern => 10);
+      
+         case
+           Zwischenspeicher
+         is
+            when 10 =>
+               Zwischenspeicher := 0;
+               exit SuperzahlSchleife;
+               
+            when 1 | 2 | 4 | 9 =>
+               exit SuperzahlSchleife;
             
-         when others =>
-            null;
-      end case;
+            when others =>
+               null;
+         end case;
+         
+      end loop SuperzahlSchleife;
       
       Put_Line ("Superzahl:" & Zwischenspeicher'Image);
       
@@ -126,4 +146,4 @@ package body Lotto6aus49 is
       
    end Sortieren;
 
-end Lotto6aus49;
+end Lotto6aus49OhneBeliebteste;

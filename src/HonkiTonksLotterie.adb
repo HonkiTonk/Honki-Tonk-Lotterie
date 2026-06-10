@@ -2,6 +2,7 @@ with Ada.Text_IO; use Ada.Text_IO;
 
 with Lotto6aus49;
 with Eurojackpot;
+with Lotto6aus49OhneBeliebteste;
 
 procedure HonkiTonksLotterie
 is
@@ -16,6 +17,7 @@ begin
       Put_Line ("Honki Tonks Lotterie V0.01.0000");
       Put_Line ("1 = 6aus49.");
       Put_Line ("2 = Eurojackpot.");
+      Put_Line ("3 = 6aus49 ohne beliebteste Tipps.");
       Put_Line ("0 = Ende.");
       New_Line;
 
@@ -29,6 +31,9 @@ begin
 
          when '2' =>
             Eurojackpot.Eurojackpot;
+
+         when '3' =>
+            Lotto6aus49OhneBeliebteste.Lotto6aus49;
 
          when '0' =>
             exit EingabeSchleife;

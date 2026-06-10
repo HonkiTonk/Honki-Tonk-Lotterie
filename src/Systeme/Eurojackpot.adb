@@ -7,13 +7,13 @@ package body Eurojackpot is
    procedure Eurojackpot
    is begin
       
-     GezogeneZahlen (1) := Zufallsgenerator.Würfelergebnis (SeitenanzahlExtern => 50);
+     GezogeneZahlen (1) := Zufallsgenerator.Zufallswert (EndeExtern => 50);
       AnzahlZahlen := 1;
       
       ZahlenSchleife:
       loop
          
-         Zwischenspeicher := Zufallsgenerator.Würfelergebnis (SeitenanzahlExtern => 50);
+         Zwischenspeicher := Zufallsgenerator.Zufallswert (EndeExtern => 50);
          
          PrüfenSchleife:
          for PrüfenSchleifenwert in GezogeneZahlen'First .. AnzahlZahlen loop
@@ -63,12 +63,12 @@ package body Eurojackpot is
          
       end loop AnzeigeSchleife;
       
-      EurozahlEins := Zufallsgenerator.Würfelergebnis (SeitenanzahlExtern => 12);
+      EurozahlEins := Zufallsgenerator.Zufallswert (EndeExtern => 12);
       
       EurozahlenSchleife:
       loop
       
-         EurozahlZwei := Zufallsgenerator.Würfelergebnis (SeitenanzahlExtern => 12);
+         EurozahlZwei := Zufallsgenerator.Zufallswert (EndeExtern => 12);
          
          if
            EurozahlEins = EurozahlZwei

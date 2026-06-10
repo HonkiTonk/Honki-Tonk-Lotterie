@@ -1,7 +1,7 @@
 package body Zufallsgenerator is
 
-   function Würfelergebnis
-     (SeitenanzahlExtern : in Positive)
+   function Zufallswert
+     (EndeExtern : in Positive)
       return Positive
    is begin
       
@@ -9,8 +9,24 @@ package body Zufallsgenerator is
       
       return Zahlenbereich.Random (Gen   => GewählteZahl,
                                    First => 1,
-                                   Last  => SeitenanzahlExtern);
+                                   Last  => EndeExtern);
                               
-   end Würfelergebnis;
+   end Zufallswert;
+   
+   
+   
+   function ZufallswertMitAnfang
+     (AnfangeExtern : in Positive;
+      EndeExtern : in Positive)
+      return Positive
+   is begin
+      
+      Zahlenbereich.Reset (Gen => GewählteZahl);
+      
+      return Zahlenbereich.Random (Gen   => GewählteZahl,
+                                   First => AnfangeExtern,
+                                   Last  => EndeExtern);
+                              
+   end ZufallswertMitAnfang;
 
 end Zufallsgenerator;

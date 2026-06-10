@@ -1,9 +1,15 @@
 package Changelog is
    pragma Pure;
    
-   -- Version 0.01.0000 => 0.0. (..202):
+   -- 0.01.1000 => 0.0. (..202):
    
    -- 
+   
+   
+   
+   -- Version 0.01.0000 => 0.01.1000 (10.06.2026):
+   
+   -- 6aus49 ohne beliebteste Tipps hinzugefügt.
    
    
 

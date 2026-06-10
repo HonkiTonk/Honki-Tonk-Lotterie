@@ -7,13 +7,13 @@ package body Lotto6aus49 is
    procedure Lotto6aus49
    is begin
       
-      GezogeneZahlen (1) := Zufallsgenerator.Würfelergebnis (SeitenanzahlExtern => 49);
+      GezogeneZahlen (1) := Zufallsgenerator.Zufallswert (EndeExtern => 49);
       AnzahlZahlen := 1;
       
       ZahlenSchleife:
       loop
          
-         Zwischenspeicher := Zufallsgenerator.Würfelergebnis (SeitenanzahlExtern => 49);
+         Zwischenspeicher := Zufallsgenerator.Zufallswert (EndeExtern => 49);
          
          PrüfenSchleife:
          for PrüfenSchleifenwert in GezogeneZahlen'First .. AnzahlZahlen loop
@@ -63,7 +63,7 @@ package body Lotto6aus49 is
          
       end loop AnzeigeSchleife;
       
-      Zwischenspeicher := Zufallsgenerator.Würfelergebnis (SeitenanzahlExtern => 10);
+      Zwischenspeicher := Zufallsgenerator.Zufallswert (EndeExtern => 10);
       
       case
         Zwischenspeicher
