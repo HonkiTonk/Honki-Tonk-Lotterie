@@ -13,7 +13,7 @@ private
    
    Zwischenspeicher : Natural;
    
-   type GezogeneZahlenArray is array (1 .. 5) of Positive;
+   type GezogeneZahlenArray is array (1 .. 5) of Natural;
    GezogeneZahlen : GezogeneZahlenArray;
    ZahlenSortieren : GezogeneZahlenArray;
    

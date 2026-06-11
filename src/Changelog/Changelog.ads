@@ -1,9 +1,15 @@
 package Changelog is
    pragma Pure;
    
-   -- 0.01.1000 => 0.0. (..202):
+   -- 0.01.2000 => 0.01. (..202):
    
    -- 
+   
+   
+   
+   -- 0.01.1000 => 0.01.2000 (11.06.2026):
+   
+   -- Eurojackpot ohne beliebteste Tipps hinzugefügt.
    
    
    

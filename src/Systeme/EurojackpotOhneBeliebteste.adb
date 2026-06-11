@@ -2,19 +2,19 @@ with Ada.Text_IO; use Ada.Text_IO;
 
 with Zufallsgenerator;
 
-package body Eurojackpot is
+package body EurojackpotOhneBeliebteste is
 
    procedure Eurojackpot
    is begin
       
       GezogeneZahlen := (others => 0);
-      GezogeneZahlen (1) := Zufallsgenerator.Zufallswert (EndeExtern => 50);
       AnzahlZahlen := 1;
       
       ZahlenSchleife:
       loop
          
          Zwischenspeicher := Zufallsgenerator.Zufallswert (EndeExtern => 50);
+               Put_Line (Zwischenspeicher'Image);
          
          PrüfenSchleife:
          for PrüfenSchleifenwert in GezogeneZahlen'First .. AnzahlZahlen loop
@@ -25,10 +25,17 @@ package body Eurojackpot is
                exit PrüfenSchleife;
                
             elsif
+              Zwischenspeicher in BeliebterZahlenbereichEins'Range
+              or
+                Zwischenspeicher in BeliebterZahlenbereichZwei'Range
+            then
+               exit PrüfenSchleife;
+               
+            elsif
               PrüfenSchleifenwert = AnzahlZahlen
             then
-               AnzahlZahlen := AnzahlZahlen + 1;
                GezogeneZahlen (AnzahlZahlen) := Zwischenspeicher;
+               AnzahlZahlen := AnzahlZahlen + 1;
                
             else
                null;
@@ -39,7 +46,7 @@ package body Eurojackpot is
          case
            AnzahlZahlen
          is
-            when 1 .. GezogeneZahlen'Last - 1 =>
+            when 1 .. GezogeneZahlen'Last =>
                null;
                
             when others =>
@@ -64,36 +71,71 @@ package body Eurojackpot is
          
       end loop AnzeigeSchleife;
       
-      EurozahlEins := Zufallsgenerator.Zufallswert (EndeExtern => 12);
+      
       
       EurozahlenSchleife:
       loop
-      
-         EurozahlZwei := Zufallsgenerator.Zufallswert (EndeExtern => 12);
+         
+         GezogeneEurozahlen := (Zufallsgenerator.Zufallswert (EndeExtern => 12), Zufallsgenerator.Zufallswert (EndeExtern => 12));
          
          if
-           EurozahlEins = EurozahlZwei
+           GezogeneEurozahlen.ZahlEins = GezogeneEurozahlen.ZahlZwei
          then
             null;
             
          else
-            exit EurozahlenSchleife;
+            UnbeliebteKombination := True;
+            
+            BeliebtheitSchleife:
+            for BeliebtheitSchleifenwert in BeliebteKombinationen'Range loop
+               
+               if
+                 GezogeneEurozahlen.ZahlEins = BeliebteKombinationen (BeliebtheitSchleifenwert).ZahlEins
+                 and
+                   GezogeneEurozahlen.ZahlZwei = BeliebteKombinationen (BeliebtheitSchleifenwert).ZahlZwei
+               then
+                  UnbeliebteKombination := False;
+                  exit BeliebtheitSchleife;
+                  
+               elsif
+                 GezogeneEurozahlen.ZahlEins = BeliebteKombinationen (BeliebtheitSchleifenwert).ZahlZwei
+                 and
+                   GezogeneEurozahlen.ZahlZwei = BeliebteKombinationen (BeliebtheitSchleifenwert).ZahlEins
+               then
+                  UnbeliebteKombination := False;
+                  exit BeliebtheitSchleife;
+                  
+               else
+                  null;
+               end if;
+                                
+            end loop BeliebtheitSchleife;
+            
+            case
+              UnbeliebteKombination
+            is
+               when True =>
+                  exit EurozahlenSchleife;
+                  
+               when False =>
+                  null;
+            end case;
          end if;
          
       end loop EurozahlenSchleife;
       
       if
-        EurozahlEins > EurozahlZwei
+        GezogeneEurozahlen.ZahlEins > GezogeneEurozahlen.ZahlZwei
       then
-         Zwischenspeicher := EurozahlEins;
-         EurozahlEins := EurozahlZwei;
-         EurozahlZwei := Zwischenspeicher;
+         Zwischenspeicher := GezogeneEurozahlen.ZahlEins;
+         GezogeneEurozahlen.ZahlEins := GezogeneEurozahlen.ZahlZwei;
+         GezogeneEurozahlen.ZahlZwei := Zwischenspeicher;
          
       else
          null;
       end if;
       
-      Put_Line ("Eurozahlen:" & EurozahlEins'Image & "," & EurozahlZwei'Image);
+      Put_Line ("Eurozahlen:" & GezogeneEurozahlen.ZahlEins'Image & "," & GezogeneEurozahlen.ZahlZwei'Image);
       
    end Eurojackpot;
    
@@ -144,4 +186,4 @@ package body Eurojackpot is
       
    end Sortieren;
 
-end Eurojackpot;
+end EurojackpotOhneBeliebteste;
