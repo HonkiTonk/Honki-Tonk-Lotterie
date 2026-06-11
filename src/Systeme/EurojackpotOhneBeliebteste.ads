@@ -1,3 +1,5 @@
+with Datentypen;
+
 package EurojackpotOhneBeliebteste is
    pragma Elaborate_Body;
 
@@ -5,7 +7,6 @@ package EurojackpotOhneBeliebteste is
    
 private
    
-   Getauscht : Boolean;
    UnbeliebteKombination : Boolean;
    
    AnzahlZahlen : Positive;
@@ -24,9 +25,7 @@ private
    subtype BeliebterZahlenbereichEins is Positive range 2 .. 20;
    subtype BeliebterZahlenbereichZwei is Positive range 22 .. 29;
    
-   type GezogeneZahlenArray is array (1 .. 5) of Natural;
-   GezogeneZahlen : GezogeneZahlenArray;
-   ZahlenSortieren : GezogeneZahlenArray;
+   GezogeneZahlen : Datentypen.GezogeneZahlenArray (1 .. 5);
    
    type BeliebteKombinationenArray is array (1 .. 32) of Eurozahlen;
    BeliebteKombinationen : constant BeliebteKombinationenArray := (
@@ -63,11 +62,5 @@ private
                                                                    31 => (7, 8),
                                                                    32 => (7, 9)
                                                                   );
-   
-   
-   
-   function Sortieren
-     (ZahlenExtern : in GezogeneZahlenArray)
-      return GezogeneZahlenArray;
    
 end EurojackpotOhneBeliebteste;

@@ -1,3 +1,5 @@
+with Datentypen;
+
 package Lotto6aus49 is
    pragma Elaborate_Body;
 
@@ -5,20 +7,10 @@ package Lotto6aus49 is
 
 private
 
-   Getauscht : Boolean;
-
    AnzahlZahlen : Positive;
 
    Zwischenspeicher : Natural;
 
-   type GezogeneZahlenArray is array (1 .. 6) of Positive;
-   GezogeneZahlen : GezogeneZahlenArray;
-   ZahlenSortieren : GezogeneZahlenArray;
-
-
-
-   function Sortieren
-     (ZahlenExtern : in GezogeneZahlenArray)
-      return GezogeneZahlenArray;
+   GezogeneZahlen : Datentypen.GezogeneZahlenArray (1 .. 6);
 
 end Lotto6aus49;
