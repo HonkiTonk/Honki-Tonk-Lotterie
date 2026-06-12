@@ -8,9 +8,8 @@ package Lotto6aus49 is
 private
 
    AnzahlZahlen : Positive;
+   Zwischenspeicher : Positive;
 
-   Zwischenspeicher : Natural;
-
-   GezogeneZahlen : Datentypen.GezogeneZahlenArray (1 .. 6);
+   GezogeneZahlen : Datentypen.GezogeneZahlenArray (Datentypen.Zahlenanzahl6aus49'Range);
 
 end Lotto6aus49;

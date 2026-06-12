@@ -15,7 +15,7 @@ begin
    EingabeSchleife:
    loop
 
-      Put_Line ("Honki Tonks Lotterie V0.01.3000");
+      Put_Line ("Honki Tonks Lotterie V0.01.4000");
       Put_Line ("1 = 6aus49.");
       Put_Line ("2 = Eurojackpot.");
       Put_Line ("3 = 6aus49 ohne beliebteste Tipps.");
@@ -44,7 +44,7 @@ begin
             exit EingabeSchleife;
 
          when others =>
-            New_Line (Spacing => 5);
+            Put_Line ("Falsche Eingabe.");
       end case;
 
       New_Line (Spacing => 2);

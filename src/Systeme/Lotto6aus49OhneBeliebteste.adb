@@ -58,23 +58,18 @@ package body Lotto6aus49OhneBeliebteste is
          
       end loop ZahlenSchleife;
       
-      GezogeneZahlen := Sortieren.SortierenLotto6aus49 (ZahlenExtern => GezogeneZahlen);
-      
-      Anzeige.Anzeige (ZahlenExtern => GezogeneZahlen);
+      Anzeige.Anzeige (ZahlenExtern => Sortieren.SortierenLotto6aus49 (ZahlenExtern => GezogeneZahlen));
       
       SuperzahlSchleife:
       loop
       
-         Zwischenspeicher := Zufallsgenerator.Zufallswert (EndeExtern => 10);
+         Zwischenspeicher := Zufallsgenerator.ZufallswertMitAnfang (AnfangeExtern => Datentypen.ZahlenauswahlSuperzahl'First,
+                                                                    EndeExtern    => Datentypen.ZahlenauswahlSuperzahl'Last);
       
          case
            Zwischenspeicher
          is
-            when 10 =>
-               Zwischenspeicher := 0;
-               exit SuperzahlSchleife;
-               
-            when 1 | 2 | 4 | 9 =>
+            when 0 | 1 | 2 | 4 | 9 =>
                exit SuperzahlSchleife;
             
             when others =>

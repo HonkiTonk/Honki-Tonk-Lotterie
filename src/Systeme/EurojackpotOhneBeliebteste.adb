@@ -13,7 +13,7 @@ package body EurojackpotOhneBeliebteste is
       ZahlenSchleife:
       loop
          
-         Zwischenspeicher := Zufallsgenerator.Zufallswert (EndeExtern => 50);
+         Zwischenspeicher := Zufallsgenerator.Zufallswert (EndeExtern => Datentypen.ZahlenauswahlEurojackpot'Last);
          
          PrüfenSchleife:
          for PrüfenSchleifenwert in GezogeneZahlen'First .. AnzahlZahlen loop
@@ -54,16 +54,14 @@ package body EurojackpotOhneBeliebteste is
          
       end loop ZahlenSchleife;
       
-      GezogeneZahlen := Sortieren.SortierenEurojackpot (ZahlenExtern => GezogeneZahlen);
-      
-      Anzeige.Anzeige (ZahlenExtern => GezogeneZahlen);
+      Anzeige.Anzeige (ZahlenExtern => Sortieren.SortierenEurojackpot (ZahlenExtern => GezogeneZahlen));
       
       
       
       EurozahlenSchleife:
       loop
          
-         GezogeneEurozahlen := (Zufallsgenerator.Zufallswert (EndeExtern => 12), Zufallsgenerator.Zufallswert (EndeExtern => 12));
+         GezogeneEurozahlen := (Zufallsgenerator.Zufallswert (EndeExtern => Datentypen.ZahlenauswahlEurozahlen'Last), Zufallsgenerator.Zufallswert (EndeExtern => Datentypen.ZahlenauswahlEurozahlen'Last));
          
          if
            GezogeneEurozahlen.ZahlEins = GezogeneEurozahlen.ZahlZwei
@@ -111,19 +109,7 @@ package body EurojackpotOhneBeliebteste is
          
       end loop EurozahlenSchleife;
       
-      if
-        GezogeneEurozahlen.ZahlEins > GezogeneEurozahlen.ZahlZwei
-      then
-         Zwischenspeicher := GezogeneEurozahlen.ZahlEins;
-         GezogeneEurozahlen.ZahlEins := GezogeneEurozahlen.ZahlZwei;
-         GezogeneEurozahlen.ZahlZwei := Zwischenspeicher;
-         
-      else
-         null;
-      end if;
-      
-      Anzeige.Eurozahlen (EurozahlEinsExtern => GezogeneEurozahlen.ZahlEins,
-                          EurozahlZweiExtern => GezogeneEurozahlen.ZahlZwei);
+      Anzeige.Eurozahlen (EurozahlenExtern => Sortieren.SortierenEurozahlen (EurozahlenExtern => GezogeneEurozahlen));
       
    end Eurojackpot;
 

@@ -7,13 +7,13 @@ package body Eurojackpot is
    procedure Eurojackpot
    is begin
       
-      GezogeneZahlen (GezogeneZahlen'First) := Zufallsgenerator.Zufallswert (EndeExtern => 50);
+      GezogeneZahlen (GezogeneZahlen'First) := Zufallsgenerator.Zufallswert (EndeExtern => Datentypen.ZahlenauswahlEurojackpot'Last);
       AnzahlZahlen := GezogeneZahlen'First;
       
       ZahlenSchleife:
       loop
          
-         Zwischenspeicher := Zufallsgenerator.Zufallswert (EndeExtern => 50);
+         Zwischenspeicher := Zufallsgenerator.Zufallswert (EndeExtern => Datentypen.ZahlenauswahlEurojackpot'Last);
          
          PrüfenSchleife:
          for PrüfenSchleifenwert in GezogeneZahlen'First .. AnzahlZahlen loop
@@ -47,19 +47,17 @@ package body Eurojackpot is
          
       end loop ZahlenSchleife;
       
-      GezogeneZahlen := Sortieren.SortierenEurojackpot (ZahlenExtern => GezogeneZahlen);
+      Anzeige.Anzeige (ZahlenExtern => Sortieren.SortierenEurojackpot (ZahlenExtern => GezogeneZahlen));
       
-      Anzeige.Anzeige (ZahlenExtern => GezogeneZahlen);
-      
-      EurozahlEins := Zufallsgenerator.Zufallswert (EndeExtern => 12);
+      GezogeneEurozahlen.ZahlEins := Zufallsgenerator.Zufallswert (EndeExtern => Datentypen.ZahlenauswahlEurozahlen'Last);
       
       EurozahlenSchleife:
       loop
       
-         EurozahlZwei := Zufallsgenerator.Zufallswert (EndeExtern => 12);
+         GezogeneEurozahlen.ZahlZwei := Zufallsgenerator.Zufallswert (EndeExtern => Datentypen.ZahlenauswahlEurozahlen'Last);
          
          if
-           EurozahlEins = EurozahlZwei
+           GezogeneEurozahlen.ZahlEins = GezogeneEurozahlen.ZahlZwei
          then
             null;
             
@@ -69,19 +67,7 @@ package body Eurojackpot is
          
       end loop EurozahlenSchleife;
       
-      if
-        EurozahlEins > EurozahlZwei
-      then
-         Zwischenspeicher := EurozahlEins;
-         EurozahlEins := EurozahlZwei;
-         EurozahlZwei := Zwischenspeicher;
-         
-      else
-         null;
-      end if;
-      
-      Anzeige.Eurozahlen (EurozahlEinsExtern => EurozahlEins,
-                          EurozahlZweiExtern => EurozahlZwei);
+      Anzeige.Eurozahlen (EurozahlenExtern => Sortieren.SortierenEurozahlen (EurozahlenExtern => GezogeneEurozahlen));
       
    end Eurojackpot;
 

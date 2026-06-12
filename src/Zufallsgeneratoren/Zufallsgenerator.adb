@@ -16,9 +16,9 @@ package body Zufallsgenerator is
    
    
    function ZufallswertMitAnfang
-     (AnfangeExtern : in Positive;
+     (AnfangeExtern : in Natural;
       EndeExtern : in Positive)
-      return Positive
+      return Natural
    is begin
       
       Zahlenbereich.Reset (Gen => GewählteZahl);

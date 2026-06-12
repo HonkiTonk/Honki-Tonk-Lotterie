@@ -35,11 +35,10 @@ package body Anzeige is
    
    
    procedure Eurozahlen
-     (EurozahlEinsExtern : in Positive;
-      EurozahlZweiExtern : in Positive)
+     (EurozahlenExtern : in Datentypen.Eurozahlen)
    is begin
       
-      Put_Line ("Eurozahlen:" & EurozahlEinsExtern'Image & "," & EurozahlZweiExtern'Image);
+      Put_Line ("Eurozahlen:" & EurozahlenExtern.ZahlEins'Image & "," & EurozahlenExtern.ZahlZwei'Image);
       
    end Eurozahlen;
 

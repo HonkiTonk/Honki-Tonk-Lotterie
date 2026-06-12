@@ -10,24 +10,16 @@ private
    UnbeliebteKombination : Boolean;
    
    AnzahlZahlen : Positive;
+   Zwischenspeicher : Positive;
    
-   Zwischenspeicher : Natural;
+   GezogeneEurozahlen : Datentypen.Eurozahlen;
    
-   type Eurozahlen is record
-      
-      ZahlEins : Positive;
-      ZahlZwei : Positive;
-      
-   end record;
+   subtype BeliebterZahlenbereichEins is Datentypen.ZahlenauswahlEurojackpot range 2 .. 20;
+   subtype BeliebterZahlenbereichZwei is Datentypen.ZahlenauswahlEurojackpot range 22 .. 29;
    
-   GezogeneEurozahlen : Eurozahlen;
+   GezogeneZahlen : Datentypen.GezogeneZahlenArray (Datentypen.ZahlenanzahlEurojackpot'Range);
    
-   subtype BeliebterZahlenbereichEins is Positive range 2 .. 20;
-   subtype BeliebterZahlenbereichZwei is Positive range 22 .. 29;
-   
-   GezogeneZahlen : Datentypen.GezogeneZahlenArray (1 .. 5);
-   
-   type BeliebteKombinationenArray is array (1 .. 32) of Eurozahlen;
+   type BeliebteKombinationenArray is array (1 .. 32) of Datentypen.Eurozahlen;
    BeliebteKombinationen : constant BeliebteKombinationenArray := (
                                                                    1  => (1, 8),
                                                                    2  => (2, 4),

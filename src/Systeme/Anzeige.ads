@@ -9,18 +9,17 @@ package Anzeige is
    procedure Superzahl
      (SuperzahlExtern : in Natural)
      with
-       Pre => (SuperzahlExtern in 0 .. 9);
+       Pre => (SuperzahlExtern in Datentypen.ZahlenauswahlSuperzahl'Range);
    
    procedure Eurozahlen
-     (EurozahlEinsExtern : in Positive;
-      EurozahlZweiExtern : in Positive)
+     (EurozahlenExtern : in Datentypen.Eurozahlen)
      with
        Pre => (
-                 EurozahlEinsExtern in 1 .. 12
+                 EurozahlenExtern.ZahlEins in Datentypen.ZahlenauswahlEurozahlen'Range
                and
-                 EurozahlZweiExtern in 1 .. 12
+                 EurozahlenExtern.ZahlZwei in Datentypen.ZahlenauswahlEurozahlen'Range
                and
-                 EurozahlEinsExtern < EurozahlZweiExtern
+                 EurozahlenExtern.ZahlEins < EurozahlenExtern.ZahlZwei
               );
 
 end Anzeige;

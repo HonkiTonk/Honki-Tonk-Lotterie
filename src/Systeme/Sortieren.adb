@@ -91,5 +91,23 @@ package body Sortieren is
       return EurojackpotSortieren;
       
    end SortierenEurojackpot;
+   
+   
+   
+   function SortierenEurozahlen
+     (EurozahlenExtern : in Datentypen.Eurozahlen)
+      return Datentypen.Eurozahlen
+   is begin
+      
+      if
+        EurozahlenExtern.ZahlEins > EurozahlenExtern.ZahlZwei
+      then
+         return (EurozahlenExtern.ZahlZwei, EurozahlenExtern.ZahlEins);
+         
+      else
+         return EurozahlenExtern;
+      end if;
+      
+   end SortierenEurozahlen;
 
 end Sortieren;

@@ -11,12 +11,12 @@ private
 
    Zwischenspeicher : Natural;
    
-   subtype BeliebterZahlenbereichEins is Positive range 1 .. 13;
-   subtype BeliebterZahlenbereichZwei is Positive range 17 .. 19;
-   subtype BeliebterZahlenbereichDrei is Positive range 23 .. 27;
-   subtype BeliebterZahlenbereichVier is Positive range 31 .. 33;
-   subtype BeliebterZahlenbereichFünf is Positive range 49 .. 49;
+   subtype BeliebterZahlenbereichEins is Datentypen.Zahlenauswahl6aus49 range 1 .. 13;
+   subtype BeliebterZahlenbereichZwei is Datentypen.Zahlenauswahl6aus49 range 17 .. 19;
+   subtype BeliebterZahlenbereichDrei is Datentypen.Zahlenauswahl6aus49 range 23 .. 27;
+   subtype BeliebterZahlenbereichVier is Datentypen.Zahlenauswahl6aus49 range 31 .. 33;
+   subtype BeliebterZahlenbereichFünf is Datentypen.Zahlenauswahl6aus49 range 49 .. 49;
    
-   GezogeneZahlen : Datentypen.GezogeneZahlenArray (1 .. 6);
+   GezogeneZahlen : Datentypen.GezogeneZahlenArray (Datentypen.Zahlenanzahl6aus49'Range);
 
 end Lotto6aus49OhneBeliebteste;

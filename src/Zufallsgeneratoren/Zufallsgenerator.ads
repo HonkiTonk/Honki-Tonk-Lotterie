@@ -10,15 +10,17 @@ package Zufallsgenerator is
        Post => (Zufallswert'Result <= EndeExtern);
    
    function ZufallswertMitAnfang
-     (AnfangeExtern : in Positive;
+     (AnfangeExtern : in Natural;
       EndeExtern : in Positive)
-      return Positive
+      return Natural
      with
+       Pre => (AnfangeExtern <= EndeExtern),
+         
        Post => (ZufallswertMitAnfang'Result in AnfangeExtern .. EndeExtern);
    
 private
    
-   package Zahlenbereich is new Ada.Numerics.Discrete_Random (Result_Subtype => Positive);
+   package Zahlenbereich is new Ada.Numerics.Discrete_Random (Result_Subtype => Natural);
    
    GewählteZahl : Zahlenbereich.Generator;
 

@@ -8,11 +8,10 @@ package Eurojackpot is
 private
    
    AnzahlZahlen : Positive;
-   EurozahlEins : Positive;
-   EurozahlZwei : Positive;
+   Zwischenspeicher : Positive;
    
-   Zwischenspeicher : Natural;
+   GezogeneEurozahlen : Datentypen.Eurozahlen;
    
-   GezogeneZahlen : Datentypen.GezogeneZahlenArray (1 .. 5);
+   GezogeneZahlen : Datentypen.GezogeneZahlenArray (Datentypen.ZahlenanzahlEurojackpot'Range);
 
 end Eurojackpot;
