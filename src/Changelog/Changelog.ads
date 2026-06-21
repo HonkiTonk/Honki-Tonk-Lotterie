@@ -1,9 +1,16 @@
 package Changelog is
    pragma Pure;
    
-   -- 0.01.4000 => 0.01. (..202):
+   -- 0.01.6000 => 0.01. (..202):
    
    -- 
+   
+   
+   
+   -- 0.01.4000 => 0.01.6000 (21.06.2026):
+   
+   -- Keno hinzugefügt.
+   -- Code zusammengefasst und optimiert.
    
    
    

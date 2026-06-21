@@ -2,12 +2,8 @@ with Datentypen;
 
 package Sortieren is
    pragma Preelaborate;
-
-   function SortierenLotto6aus49
-     (ZahlenExtern : in Datentypen.GezogeneZahlenArray)
-      return Datentypen.GezogeneZahlenArray;
    
-   function SortierenEurojackpot
+   function Sortieren
      (ZahlenExtern : in Datentypen.GezogeneZahlenArray)
       return Datentypen.GezogeneZahlenArray;
    
@@ -25,7 +21,6 @@ private
 
    Zwischenspeicher : Positive;
    
-   Lotto6aus49Sortieren : Datentypen.GezogeneZahlenArray (Datentypen.Zahlenanzahl6aus49'Range);
-   EurojackpotSortieren : Datentypen.GezogeneZahlenArray (Datentypen.ZahlenanzahlEurojackpot'Range);
+   ZahlenSortieren : Datentypen.GezogeneZahlenArray (1.. Datentypen.GrößterZahlenbereich);
 
 end Sortieren;

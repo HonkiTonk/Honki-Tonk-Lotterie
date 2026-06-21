@@ -1,5 +1,6 @@
 with Ada.Text_IO; use Ada.Text_IO;
 
+with Keno;
 with Lotto6aus49;
 with Eurojackpot;
 with Lotto6aus49OhneBeliebteste;
@@ -15,12 +16,13 @@ begin
    EingabeSchleife:
    loop
 
-      Put_Line ("Honki Tonks Lotterie V0.01.4000");
-      Put_Line ("1 = 6aus49.");
-      Put_Line ("2 = Eurojackpot.");
-      Put_Line ("3 = 6aus49 ohne beliebteste Tipps.");
-      Put_Line ("4 = Eurojackpot ohne beliebteste Tipps.");
-      Put_Line ("0 = Ende.");
+      Put_Line (Item => "Honki Tonks Lotterie V0.01.6000");
+      Put_Line (Item => "1 = 6aus49.");
+      Put_Line (Item => "2 = Eurojackpot.");
+      Put_Line (Item => "3 = 6aus49 ohne beliebteste Tipps.");
+      Put_Line (Item => "4 = Eurojackpot ohne beliebteste Tipps.");
+      Put_Line (Item => "5 = Keno.");
+      Put_Line (Item => "0 = Ende.");
       New_Line;
 
       Get_Immediate (Eingabe);
@@ -40,11 +42,14 @@ begin
          when '4' =>
             EurojackpotOhneBeliebteste.Eurojackpot;
 
+         when '5' =>
+            Keno.Keno;
+
          when '0' =>
             exit EingabeSchleife;
 
          when others =>
-            Put_Line ("Falsche Eingabe.");
+            Put_Line (Item => "Falsche Eingabe.");
       end case;
 
       New_Line (Spacing => 2);

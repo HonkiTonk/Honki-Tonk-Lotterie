@@ -47,7 +47,7 @@ package body Eurojackpot is
          
       end loop ZahlenSchleife;
       
-      Anzeige.Anzeige (ZahlenExtern => Sortieren.SortierenEurojackpot (ZahlenExtern => GezogeneZahlen));
+      Anzeige.Anzeige (ZahlenExtern => Sortieren.Sortieren (ZahlenExtern => GezogeneZahlen));
       
       GezogeneEurozahlen.ZahlEins := Zufallsgenerator.Zufallswert (EndeExtern => Datentypen.ZahlenauswahlEurozahlen'Last);
       

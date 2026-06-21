@@ -7,7 +7,7 @@ package body EurojackpotOhneBeliebteste is
    procedure Eurojackpot
    is begin
       
-      GezogeneZahlen := (others => 100);
+      GezogeneZahlen := (others => 0);
       AnzahlZahlen := GezogeneZahlen'First;
       
       ZahlenSchleife:
@@ -54,7 +54,7 @@ package body EurojackpotOhneBeliebteste is
          
       end loop ZahlenSchleife;
       
-      Anzeige.Anzeige (ZahlenExtern => Sortieren.SortierenEurojackpot (ZahlenExtern => GezogeneZahlen));
+      Anzeige.Anzeige (ZahlenExtern => Sortieren.Sortieren (ZahlenExtern => GezogeneZahlen));
       
       
       

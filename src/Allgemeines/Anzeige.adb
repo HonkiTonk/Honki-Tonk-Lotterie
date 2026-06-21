@@ -10,6 +10,11 @@ package body Anzeige is
       for AnzeigeSchleifenwert in ZahlenExtern'Range loop
          
          if
+           ZahlenExtern (AnzeigeSchleifenwert) = 0
+         then
+            null;
+            
+         elsif
            AnzeigeSchleifenwert < ZahlenExtern'Last
          then
             Put (Item => ZahlenExtern (AnzeigeSchleifenwert)'Image & ",");
@@ -28,7 +33,7 @@ package body Anzeige is
      (SuperzahlExtern : in Natural)
    is begin
       
-      Put_Line ("Superzahl:" & SuperzahlExtern'Image);
+      Put_Line (Item => "Superzahl:" & SuperzahlExtern'Image);
       
    end Superzahl;
    
@@ -38,7 +43,7 @@ package body Anzeige is
      (EurozahlenExtern : in Datentypen.Eurozahlen)
    is begin
       
-      Put_Line ("Eurozahlen:" & EurozahlenExtern.ZahlEins'Image & "," & EurozahlenExtern.ZahlZwei'Image);
+      Put_Line (Item => "Eurozahlen:" & EurozahlenExtern.ZahlEins'Image & "," & EurozahlenExtern.ZahlZwei'Image);
       
    end Eurozahlen;
 

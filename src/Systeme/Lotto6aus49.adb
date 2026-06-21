@@ -47,7 +47,7 @@ package body Lotto6aus49 is
          
       end loop ZahlenSchleife;
       
-      Anzeige.Anzeige (ZahlenExtern => Sortieren.SortierenLotto6aus49 (ZahlenExtern => GezogeneZahlen));
+      Anzeige.Anzeige (ZahlenExtern => Sortieren.Sortieren (ZahlenExtern => GezogeneZahlen));
       
       Anzeige.Superzahl (SuperzahlExtern => Zufallsgenerator.ZufallswertMitAnfang (AnfangeExtern => Datentypen.ZahlenauswahlSuperzahl'First,
                                                                                    EndeExtern    => Datentypen.ZahlenauswahlSuperzahl'Last));
