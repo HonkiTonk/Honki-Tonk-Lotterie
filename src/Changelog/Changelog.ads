@@ -1,9 +1,16 @@
 package Changelog is
    pragma Pure;
    
-   -- 0.02.0000 => 0.02. (..202):
+   -- 0.02.1000 => 0.02. (..202):
    
    -- 
+   
+   
+   
+   
+   -- 0.02.0000 => 0.02.1000 (21.06.2026):
+   
+   -- Fehler korrigiert, durch den beliebte Zahlen bei 6aus49 gezogen wurden obwohl sie nicht gezogen werden sollten.
    
    
    

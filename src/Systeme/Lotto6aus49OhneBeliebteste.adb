@@ -7,8 +7,7 @@ package body Lotto6aus49OhneBeliebteste is
    procedure Lotto6aus49
    is begin
       
-      GezogeneZahlen (GezogeneZahlen'First) := Zufallsgenerator.ZufallswertMitAnfang (AnfangeExtern => BeliebterZahlenbereichEins'Last + 1,
-                                                                                      EndeExtern    => BeliebterZahlenbereichFünf'First - 1);
+      GezogeneZahlen := (others => 0);
       AnzahlZahlen := GezogeneZahlen'First;
       
       ZahlenSchleife:
