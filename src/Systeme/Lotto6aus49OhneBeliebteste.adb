@@ -36,8 +36,8 @@ package body Lotto6aus49OhneBeliebteste is
             elsif
               PrüfenSchleifenwert = AnzahlZahlen
             then
-               AnzahlZahlen := AnzahlZahlen + 1;
                GezogeneZahlen (AnzahlZahlen) := Zwischenspeicher;
+               AnzahlZahlen := AnzahlZahlen + 1;
                
             else
                null;
@@ -48,7 +48,7 @@ package body Lotto6aus49OhneBeliebteste is
          case
            AnzahlZahlen
          is
-            when GezogeneZahlen'First .. GezogeneZahlen'Last - 1 =>
+            when GezogeneZahlen'First .. GezogeneZahlen'Last =>
                null;
                
             when others =>
