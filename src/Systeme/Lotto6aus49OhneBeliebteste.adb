@@ -26,11 +26,11 @@ package body Lotto6aus49OhneBeliebteste is
                exit PrüfenSchleife;
                
             elsif
-              Zwischenspeicher in BeliebterZahlenbereichZwei
+              Zwischenspeicher in BeliebterZahlenbereichZwei'Range
               or
-                Zwischenspeicher in BeliebterZahlenbereichDrei
+                Zwischenspeicher in BeliebterZahlenbereichDrei'Range
                 or
-                  Zwischenspeicher in BeliebterZahlenbereichVier
+                  Zwischenspeicher in BeliebterZahlenbereichVier'Range
             then
                exit PrüfenSchleife;
                

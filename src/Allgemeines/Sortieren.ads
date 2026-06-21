@@ -11,15 +11,19 @@ package Sortieren is
      (EurozahlenExtern : in Datentypen.Eurozahlen)
       return Datentypen.Eurozahlen
      with
-       Pre => (EurozahlenExtern.ZahlEins /= EurozahlenExtern.ZahlZwei),
-   
-       Post => (SortierenEurozahlen'Result.ZahlEins < SortierenEurozahlen'Result.ZahlZwei);
+       Pre => (
+                 EurozahlenExtern.ZahlEins /= EurozahlenExtern.ZahlZwei
+              ),
+         
+       Post => (
+                  SortierenEurozahlen'Result.ZahlEins < SortierenEurozahlen'Result.ZahlZwei
+               );
    
 private
 
    Getauscht : Boolean;
 
-   Zwischenspeicher : Positive;
+   Zwischenspeicher : Natural;
    
    ZahlenSortieren : Datentypen.GezogeneZahlenArray (1.. Datentypen.GrößterZahlenbereich);
 

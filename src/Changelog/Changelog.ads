@@ -1,9 +1,15 @@
 package Changelog is
    pragma Pure;
    
-   -- 0.01.6000 => 0.01. (..202):
+   -- 0.01.7000 => 0.01. (..202):
    
    -- 
+   
+   
+   
+   -- 0.01.6000 => 0.01.7000 (21.06.2026):
+   
+   -- Kleinigkeiten angepasst.
    
    
    

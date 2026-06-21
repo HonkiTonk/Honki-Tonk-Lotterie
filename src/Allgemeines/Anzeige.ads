@@ -9,7 +9,9 @@ package Anzeige is
    procedure Superzahl
      (SuperzahlExtern : in Natural)
      with
-       Pre => (SuperzahlExtern in Datentypen.ZahlenauswahlSuperzahl'Range);
+       Pre => (
+                 SuperzahlExtern in Datentypen.ZahlenauswahlSuperzahl'Range
+              );
    
    procedure Eurozahlen
      (EurozahlenExtern : in Datentypen.Eurozahlen)

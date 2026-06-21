@@ -1,4 +1,4 @@
-with Datentypen;
+private with Datentypen;
 
 package Lotto6aus49OhneBeliebteste is
    pragma Elaborate_Body;

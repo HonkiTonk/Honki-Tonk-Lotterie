@@ -7,16 +7,22 @@ package Zufallsgenerator is
      (EndeExtern : in Positive)
       return Positive
      with
-       Post => (Zufallswert'Result <= EndeExtern);
+       Post => (
+                  Zufallswert'Result <= EndeExtern
+               );
    
    function ZufallswertMitAnfang
      (AnfangeExtern : in Natural;
       EndeExtern : in Positive)
       return Natural
      with
-       Pre => (AnfangeExtern <= EndeExtern),
+       Pre => (
+                 AnfangeExtern <= EndeExtern
+              ),
          
-       Post => (ZufallswertMitAnfang'Result in AnfangeExtern .. EndeExtern);
+       Post => (
+                  ZufallswertMitAnfang'Result in AnfangeExtern .. EndeExtern
+               );
    
 private
    

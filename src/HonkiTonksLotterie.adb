@@ -16,7 +16,7 @@ begin
    EingabeSchleife:
    loop
 
-      Put_Line (Item => "Honki Tonks Lotterie V0.01.6000");
+      Put_Line (Item => "Honki Tonks Lotterie V0.01.7000");
       Put_Line (Item => "1 = 6aus49.");
       Put_Line (Item => "2 = Eurojackpot.");
       Put_Line (Item => "3 = 6aus49 ohne beliebteste Tipps.");
