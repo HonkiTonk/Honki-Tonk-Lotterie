@@ -17,6 +17,8 @@ package Datentypen is
 
    subtype ZahlenauswahlKeno is Positive range 1 .. 70;
 
+   subtype ZahlenauswahlGlücksspirale is Natural range 0 .. 9;
+
 
 
    GrößterZahlenbereich : constant Positive := 10;
@@ -24,7 +26,9 @@ package Datentypen is
    subtype Zahlenanzahl6aus49 is Zahlenauswahl6aus49 range 1 .. 6;
    subtype ZahlenanzahlEurojackpot is ZahlenauswahlEurozahlen range 1 .. 5;
    subtype ZahlenanzahlKeno is ZahlenauswahlKeno range 1 .. 10;
+   subtype ZahlenanzahlGlücksspirale is ZahlenauswahlGlücksspirale range 1 .. 7;
 
    subtype ZahlenauswahlSuperzahl is Natural range 0 .. 9;
+
 
 end Datentypen;

@@ -1,9 +1,17 @@
 package Changelog is
    pragma Pure;
    
-   -- 0.01.7000 => 0.01. (..202):
+   -- 0.02.0000 => 0.02. (..202):
    
    -- 
+   
+   
+   
+   -- 0.01.7000 => 0.02.0000 (21.06.2026):
+   
+   -- Glücksspirale hinzugefügt.
+   -- Doppelte Sieben hinzugefügt.
+   -- README aktualisiert.
    
    
    

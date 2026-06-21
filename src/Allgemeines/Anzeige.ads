@@ -6,6 +6,9 @@ package Anzeige is
    procedure Anzeige
      (ZahlenExtern : in Datentypen.GezogeneZahlenArray);
    
+   procedure AnzeigeNull
+     (ZahlenExtern : in Datentypen.GezogeneZahlenArray);
+   
    procedure Superzahl
      (SuperzahlExtern : in Natural)
      with

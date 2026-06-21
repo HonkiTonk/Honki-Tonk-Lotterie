@@ -1,5 +1,7 @@
 with Ada.Text_IO; use Ada.Text_IO;
 
+with DoppelteSieben;
+with Gluecksspirale;
 with Keno;
 with Lotto6aus49;
 with Eurojackpot;
@@ -22,6 +24,8 @@ begin
       Put_Line (Item => "3 = 6aus49 ohne beliebteste Tipps.");
       Put_Line (Item => "4 = Eurojackpot ohne beliebteste Tipps.");
       Put_Line (Item => "5 = Keno.");
+      Put_Line (Item => "6 = Gluecksspirale.");
+      Put_Line (Item => "7 = Doppelte Sieben.");
       Put_Line (Item => "0 = Ende.");
       New_Line;
 
@@ -44,6 +48,12 @@ begin
 
          when '5' =>
             Keno.Keno;
+
+         when '6' =>
+            Gluecksspirale.Gluecksspirale;
+
+         when '7' =>
+            DoppelteSieben.DoppelteSieben;
 
          when '0' =>
             exit EingabeSchleife;

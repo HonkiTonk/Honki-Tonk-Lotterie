@@ -15,7 +15,7 @@ package body Keno is
          Put_Line (Item => "Keno Typ festlegen.");
          Put_Line (Item => "1 = Keno Typ 10.");
          Put_Line (Item => "2 - 9 = Keno Typ 2 - 9.");
-         Put_Line (Item => "0 = Zurück.");
+         Put_Line (Item => "0 = Zurueck.");
          New_Line;
          
          Get_Immediate (Eingabe);

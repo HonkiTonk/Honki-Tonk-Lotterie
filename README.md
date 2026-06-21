@@ -8,3 +8,13 @@ Vorhandene Lotterien/Available lotteries:
 6aus49
 
 Eurojackpot
+
+6aus49 ohne beliebteste Tipps
+
+Eurojackpot ohne beliebteste Tipps
+
+Keno
+
+Glücksspirale
+
+Doppelte Sieben

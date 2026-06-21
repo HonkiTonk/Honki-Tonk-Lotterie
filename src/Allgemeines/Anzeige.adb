@@ -29,6 +29,28 @@ package body Anzeige is
    
    
    
+   procedure AnzeigeNull
+     (ZahlenExtern : in Datentypen.GezogeneZahlenArray)
+   is begin
+      
+      AnzeigeSchleife:
+      for AnzeigeSchleifenwert in ZahlenExtern'Range loop
+         
+         if
+           AnzeigeSchleifenwert < ZahlenExtern'Last
+         then
+            Put (Item => ZahlenExtern (AnzeigeSchleifenwert)'Image & ",");
+            
+         else
+            Put_Line (Item => ZahlenExtern (AnzeigeSchleifenwert)'Image);
+         end if;
+         
+      end loop AnzeigeSchleife;
+      
+   end AnzeigeNull;
+   
+   
+   
    procedure Superzahl
      (SuperzahlExtern : in Natural)
    is begin
