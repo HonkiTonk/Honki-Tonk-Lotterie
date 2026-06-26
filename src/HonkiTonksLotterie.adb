@@ -20,12 +20,14 @@ begin
 
       Put_Line (Item => "Honki Tonks Lotterie V0.02.2000");
       Put_Line (Item => "1 = 6aus49.");
-      Put_Line (Item => "2 = Eurojackpot.");
-      Put_Line (Item => "3 = 6aus49 ohne beliebteste Tipps.");
-      Put_Line (Item => "4 = Eurojackpot ohne beliebteste Tipps.");
-      Put_Line (Item => "5 = Keno.");
-      Put_Line (Item => "6 = Gluecksspirale.");
-      Put_Line (Item => "7 = Doppelte Sieben.");
+      Put_Line (Item => "2 = 6aus49 ohne beliebteste Tipps.");
+      Put_Line (Item => "3 = 6aus49 Vollsystem.");
+      Put_Line (Item => "4 = 6aus49 Vollsystem ohne beliebteste Tipps.");
+      Put_Line (Item => "5 = Eurojackpot.");
+      Put_Line (Item => "6 = Eurojackpot ohne beliebteste Tipps.");
+      Put_Line (Item => "7 = Keno.");
+      Put_Line (Item => "8 = Gluecksspirale.");
+      Put_Line (Item => "9 = Doppelte Sieben.");
       Put_Line (Item => "0 = Ende.");
       New_Line;
 
@@ -35,24 +37,30 @@ begin
         Eingabe
       is
          when '1' =>
-            Lotto6aus49.Lotto6aus49;
+            Lotto6aus49.Lotto6aus49 (ZahlenanzahlExtern => 6);
 
          when '2' =>
-            Eurojackpot.Eurojackpot;
+            Lotto6aus49OhneBeliebteste.Lotto6aus49 (ZahlenanzahlExtern => 6);
 
          when '3' =>
-            Lotto6aus49OhneBeliebteste.Lotto6aus49;
+            Lotto6aus49.Vollsystem (AlleZahlenExtern => True);
 
          when '4' =>
-            EurojackpotOhneBeliebteste.Eurojackpot;
+            Lotto6aus49.Vollsystem (AlleZahlenExtern => False);
 
          when '5' =>
-            Keno.Keno;
+            Eurojackpot.Eurojackpot;
 
          when '6' =>
-            Gluecksspirale.Gluecksspirale;
+            EurojackpotOhneBeliebteste.Eurojackpot;
 
          when '7' =>
+            Keno.Keno;
+
+         when '8' =>
+            Gluecksspirale.Gluecksspirale;
+
+         when '9' =>
             DoppelteSieben.DoppelteSieben;
 
          when '0' =>
@@ -62,7 +70,7 @@ begin
             Put_Line (Item => "Falsche Eingabe.");
       end case;
 
-      New_Line (Spacing => 2);
+      New_Line (Spacing => 3);
 
    end loop EingabeSchleife;
 

@@ -3,11 +3,18 @@ private with Datentypen;
 package Lotto6aus49OhneBeliebteste is
    pragma Elaborate_Body;
 
-   procedure Lotto6aus49;
+   procedure Lotto6aus49
+     (ZahlenanzahlExtern : in Positive)
+     with
+       Pre => (
+                 ZahlenanzahlExtern in 6 .. 12
+              );
 
 private
 
-   AnzahlZahlen : Positive;
+   Eingabe : Character;
+
+   Zahlenposition : Positive;
 
    Zwischenspeicher : Natural;
    
@@ -17,6 +24,6 @@ private
    subtype BeliebterZahlenbereichVier is Datentypen.Zahlenauswahl6aus49 range 31 .. 33;
    subtype BeliebterZahlenbereichFünf is Datentypen.Zahlenauswahl6aus49 range 49 .. 49;
    
-   GezogeneZahlen : Datentypen.GezogeneZahlenArray (Datentypen.Zahlenanzahl6aus49'Range);
+   GezogeneZahlen : Datentypen.GezogeneZahlenArray (Datentypen.Zahlenanzahl6aus49Vollsystem'Range);
 
 end Lotto6aus49OhneBeliebteste;

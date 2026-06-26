@@ -5,10 +5,11 @@ with Anzeige;
 package body Lotto6aus49OhneBeliebteste is
 
    procedure Lotto6aus49
+     (ZahlenanzahlExtern : in Positive)
    is begin
       
       GezogeneZahlen := (others => 0);
-      AnzahlZahlen := GezogeneZahlen'First;
+      Zahlenposition := GezogeneZahlen'First;
       
       ZahlenSchleife:
       loop
@@ -17,7 +18,7 @@ package body Lotto6aus49OhneBeliebteste is
                                                                     EndeExtern    => BeliebterZahlenbereichFünf'First - 1);
          
          PrüfenSchleife:
-         for PrüfenSchleifenwert in GezogeneZahlen'First .. AnzahlZahlen loop
+         for PrüfenSchleifenwert in GezogeneZahlen'First .. Zahlenposition loop
             
             if
               GezogeneZahlen (PrüfenSchleifenwert) = Zwischenspeicher
@@ -34,10 +35,10 @@ package body Lotto6aus49OhneBeliebteste is
                exit PrüfenSchleife;
                
             elsif
-              PrüfenSchleifenwert = AnzahlZahlen
+              PrüfenSchleifenwert = Zahlenposition
             then
-               GezogeneZahlen (AnzahlZahlen) := Zwischenspeicher;
-               AnzahlZahlen := AnzahlZahlen + 1;
+               GezogeneZahlen (Zahlenposition) := Zwischenspeicher;
+               Zahlenposition := Zahlenposition + 1;
                
             else
                null;
@@ -45,15 +46,14 @@ package body Lotto6aus49OhneBeliebteste is
             
          end loop PrüfenSchleife;
          
-         case
-           AnzahlZahlen
-         is
-            when GezogeneZahlen'First .. GezogeneZahlen'Last =>
-               null;
+         if
+           Zahlenposition in GezogeneZahlen'First .. ZahlenanzahlExtern
+         then
+            null;
                
-            when others =>
-               exit ZahlenSchleife;
-         end case;
+         else
+            exit ZahlenSchleife;
+         end if;
          
       end loop ZahlenSchleife;
       

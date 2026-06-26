@@ -1,13 +1,20 @@
 package Changelog is
    pragma Pure;
    
-   -- 0.02.2000 => 0.02. (..202):
+   -- 0.02.4000 => 0.02. (..202):
    
    -- 
    
    
    
-   -- 0.02.1000 => 0.02.2000 (.06.2026):
+   -- 0.02.2000 => 0.02.4000 (26.06.2026):
+   
+   -- 6aus49 Vollsystem hinzugefügt.
+   -- 6aus49 Vollsystem ohne beliebteste Tipps hinzugefügt.
+   
+   
+   
+   -- 0.02.1000 => 0.02.2000 (21.06.2026):
    
    -- Fehler korrigiert welcher unter bestimmten Umständen dafür sorgte das nur fünf statt sechs Zahlen gezogen wurden.
    

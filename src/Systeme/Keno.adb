@@ -12,7 +12,7 @@ package body Keno is
       KenoTypSchleife:
       loop
          
-         Put_Line (Item => "Keno Typ festlegen.");
+         Put_Line (Item => "Keno Typ festlegen:");
          Put_Line (Item => "1 = Keno Typ 10.");
          Put_Line (Item => "2 - 9 = Keno Typ 2 - 9.");
          Put_Line (Item => "0 = Zurueck.");
@@ -38,7 +38,7 @@ package body Keno is
                Put_Line (Item => "Falsche Eingabe.");
          end case;
 
-         New_Line (Spacing => 2);
+         New_Line (Spacing => 3);
          
       end loop KenoTypSchleife;
       
