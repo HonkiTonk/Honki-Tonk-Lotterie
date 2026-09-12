@@ -8,8 +8,13 @@ pragma Elaboration_Checks (Static);
 pragma Detect_Blocking;
 pragma Task_Dispatching_Policy (FIFO_Within_Priorities);
 pragma Locking_Policy (Ceiling_Locking);
+-- Eventuell langsamer.
 pragma Check_Float_Overflow;
+-- Gibt es ein Argument für Off?
 pragma Extensions_Allowed (Off);
+pragma Assertion_Policy (Check);
+pragma Implicit_Packing;
+pragma Validity_Checks (All_Checks);
 
 pragma Restrictions (Simple_Barriers);
 pragma Restrictions (No_Access_Parameter_Allocators);
@@ -51,6 +56,7 @@ pragma Restrictions (No_Implementation_Units);
 pragma Restrictions (No_Obsolescent_Features);
 pragma Restrictions (No_Implementation_Aspect_Specifications);
 pragma Restrictions (No_Implementation_Attributes);
+pragma Restrictions (No_Implicit_Aliasing);
 
 pragma Restrictions (Max_Protected_Entries => 0);
 pragma Restrictions (Max_Select_Alternatives => 0);
@@ -65,6 +71,7 @@ pragma Restrictions (No_Dependence => Ada.Task_Attributes);
 pragma Restrictions (No_Dependence => Ada.System.Multiprocessors.Dispatching_Domains);
 
 
+pragma Restrictions (No_Long_Long_Integers);
 
 -- Nicht benutzbar in meinem Spiel:
 -- Die notwendige Verwendung von delay until verhinderte scheinbar den korrekten Abbruch von Tasks.
@@ -104,6 +111,7 @@ pragma Restrictions (No_Dependence => Ada.System.Multiprocessors.Dispatching_Dom
 -- pragma Reviewable;
 -- pragma Short_Circuit_And_Or;
 -- pragma Short_Descriptors;
+-- Kann ich bei meinem Spiel nicht verwenden.
 -- pragma Restrictions (No_Implicit_Loops);
 -- Ist eine entspanntere Version von pragma Restrictions (Simple_Barriers), welches verwendet wird, sollte also nicht nötig sein.
 -- pragma Restrictions (Pure_Barriers);
@@ -121,4 +129,3 @@ pragma Restrictions (No_Dependence => Ada.System.Multiprocessors.Dispatching_Dom
 -- pragma Overriding_Renamings;
 -- pragma Suppress_All;
 -- pragma Suppress_Exception_Locations;
--- pragma Assertion_Policy (Pre => Check);

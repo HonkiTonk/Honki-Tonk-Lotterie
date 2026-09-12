@@ -5,13 +5,13 @@ A small programm to generate numbers for various lotteries.
 
 Vorhandene Lotterien/Available lotteries:
 
-6aus49
+6aus49 (auch für Vollsysteme)
 
 Eurojackpot
 
-6aus49 ohne beliebteste Tipps
+6aus49 optimiert auf Gewinnsumme (auch für Vollsysteme)
 
-Eurojackpot ohne beliebteste Tipps
+Eurojackpot optimiert auf Gewinnsumme
 
 Keno
 

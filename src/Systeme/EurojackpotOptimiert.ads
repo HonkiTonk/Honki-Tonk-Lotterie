@@ -1,6 +1,6 @@
 private with Datentypen;
 
-package EurojackpotOhneBeliebteste is
+package EurojackpotOptimiert is
    pragma Elaborate_Body;
 
    procedure Eurojackpot;
@@ -11,6 +11,8 @@ private
    
    AnzahlZahlen : Positive;
    Zwischenspeicher : Positive;
+   
+   Summe : Natural;
    
    GezogeneEurozahlen : Datentypen.Eurozahlen;
    
@@ -55,4 +57,4 @@ private
                                                                    32 => (7, 9)
                                                                   );
    
-end EurojackpotOhneBeliebteste;
+end EurojackpotOptimiert;

@@ -3,7 +3,7 @@ with Ada.Text_IO; use Ada.Text_IO;
 with Zufallsgenerator;
 with Sortieren;
 with Anzeige;
-with Lotto6aus49OhneBeliebteste;
+with Lotto6aus49Optimiert;
 
 package body Lotto6aus49 is
 
@@ -98,7 +98,7 @@ package body Lotto6aus49 is
             Lotto6aus49 (ZahlenanzahlExtern => Datentypen.VollsystemZahlenbereich (Eingabe));
             
          when False =>
-            Lotto6aus49OhneBeliebteste.Lotto6aus49 (ZahlenanzahlExtern => Datentypen.VollsystemZahlenbereich (Eingabe));
+            Lotto6aus49Optimiert.Lotto6aus49 (ZahlenanzahlExtern => Datentypen.VollsystemZahlenbereich (Eingabe));
       end case;
       
    end Vollsystem;

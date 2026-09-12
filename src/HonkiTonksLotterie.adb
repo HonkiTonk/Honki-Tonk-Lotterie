@@ -5,8 +5,8 @@ with Gluecksspirale;
 with Keno;
 with Lotto6aus49;
 with Eurojackpot;
-with Lotto6aus49OhneBeliebteste;
-with EurojackpotOhneBeliebteste;
+with Lotto6aus49Optimiert;
+with EurojackpotOptimiert;
 
 procedure HonkiTonksLotterie
 is
@@ -18,13 +18,13 @@ begin
    EingabeSchleife:
    loop
 
-      Put_Line (Item => "Honki Tonks Lotterie V0.02.4000");
+      Put_Line (Item => "Honki Tonks Lotterie V0.02.6000");
       Put_Line (Item => "1 = 6aus49.");
-      Put_Line (Item => "2 = 6aus49 ohne beliebteste Tipps.");
+      Put_Line (Item => "2 = 6aus49 optimiert auf Gewinnsumme.");
       Put_Line (Item => "3 = 6aus49 Vollsystem.");
-      Put_Line (Item => "4 = 6aus49 Vollsystem ohne beliebteste Tipps.");
+      Put_Line (Item => "4 = 6aus49 Vollsystem optimiert auf Gewinnsumme.");
       Put_Line (Item => "5 = Eurojackpot.");
-      Put_Line (Item => "6 = Eurojackpot ohne beliebteste Tipps.");
+      Put_Line (Item => "6 = Eurojackpot optimiert auf Gewinnsumme.");
       Put_Line (Item => "7 = Keno.");
       Put_Line (Item => "8 = Gluecksspirale.");
       Put_Line (Item => "9 = Doppelte Sieben.");
@@ -40,7 +40,7 @@ begin
             Lotto6aus49.Lotto6aus49 (ZahlenanzahlExtern => 6);
 
          when '2' =>
-            Lotto6aus49OhneBeliebteste.Lotto6aus49 (ZahlenanzahlExtern => 6);
+            Lotto6aus49Optimiert.Lotto6aus49 (ZahlenanzahlExtern => 6);
 
          when '3' =>
             Lotto6aus49.Vollsystem (AlleZahlenExtern => True);
@@ -52,7 +52,7 @@ begin
             Eurojackpot.Eurojackpot;
 
          when '6' =>
-            EurojackpotOhneBeliebteste.Eurojackpot;
+            EurojackpotOptimiert.Eurojackpot;
 
          when '7' =>
             Keno.Keno;

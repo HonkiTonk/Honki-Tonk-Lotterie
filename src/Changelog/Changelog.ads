@@ -1,9 +1,16 @@
 package Changelog is
    pragma Pure;
    
-   -- 0.02.4000 => 0.02. (..202):
+   -- 0.02.6000 => 0.02. (..202):
    
    -- 
+   
+   
+   
+   -- 0.02.4000 => 0.02.6000 (12.09.202):
+   
+   -- 6aus49 optimiert auf Gewinnsumme überarbeitet, so dass die Summe aller Zahlen jetzt größer/gleich 164 ist, um Datumstipper größtenteils zu eliminieren.
+   -- Eurojackpot optimiert auf Gewinnsumme überarbeitet, so dass die Summe aller Zahlen jetzt größer/gleich 164 ist, um Datumstipper größtenteils zu eliminieren.
    
    
    
